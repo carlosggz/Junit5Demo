@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  db:
+    image: "postgres:11"
+    ports:
+      - "5444:5432"
+    environment:
+      - POSTGRES_USER=demo
+      - POSTGRES_PASSWORD=demo
+      - POSTGRES_DB=demo
+  mail:
+    image: djfarrelly/maildev
+    ports:
+      - '1025:25'
+      - '1080:80'
+  rabbitmq:
+    image: rabbitmq:3.8.5-management-alpine
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    environment:
+      - RABBITMQ_DEFAULT_USER=demo
+      - RABBITMQ_DEFAULT_PASS=demo
+  ftps:
+    image: mikatux/ftps-server
+    volumes:
+      - ./uploads:/home/demo
+    environment:
+      USER: demo
+      PASSWORD: demo
+    ports:
+      - "2121:21"
+      - "3000-3010:3000-3010"
+  redis:
+    image: redis
+    hostname: redis
+    ports:
+      - '16379:6379'
+

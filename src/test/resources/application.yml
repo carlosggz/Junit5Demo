@@ -1,0 +1,54 @@
+app:
+  jokesUrl: http://localhost:8081
+  schedule: "-"
+  redisSeconds: 60
+  mail:
+    fromName: "Jokes retriever App"
+    fromAddress: noreply@jokesapp.com
+    toAddress: demo1@example.com
+    bccAddress: demo2@example.com,demo3@example.com
+    subject: "New Joke received!!!"
+  ftp:
+    serverName: 127.0.0.1
+    port: 2112
+    userName: demo
+    password: demo
+
+spring:
+  application:
+    name: Demo
+  flyway:
+    baseline-on-migrate: true
+    baseline-version: 0
+    locations: classpath:db/migration/h2
+    sql-migration-prefix: V
+    table: h2_demo_schema_version
+    schemas:
+    user: sa
+    password:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    userName: sa
+    password:
+    platform: h2
+  jpa:
+    hibernate.ddl-auto: none
+    show-sql: true
+    properties.hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+      default_schema:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  mail:
+    host: localhost
+    port: 3025
+    default-encoding: UTF-8
+    username: test
+    password: test
+    protocol: smtp
+  redis:
+    host: localhost
+    port: 16361
