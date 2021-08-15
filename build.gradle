@@ -40,6 +40,7 @@ dependencies {
     implementation 'com.github.spullara.mustache.java:compiler:0.9.10'
     implementation 'commons-net:commons-net:20030805.205232'
     implementation "org.springframework.boot:spring-boot-starter-data-redis:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
 
     testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
     testImplementation "org.testcontainers:junit-jupiter:${testcontainersVersion}"
