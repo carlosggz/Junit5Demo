@@ -25,4 +25,5 @@ To verify the functionality, you can check the logs and the servers at:
 - rabbitmq at http://localhost:15672
 - redis at 16379
 - the rest controller at http://localhost:8080/jokes
+- the websockets demo page http://localhost:8080/
 
