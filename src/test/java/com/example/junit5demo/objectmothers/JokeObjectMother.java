@@ -2,8 +2,8 @@ package com.example.junit5demo.objectmothers;
 
 import com.example.junit5demo.domain.dtos.ExternalJokeDto;
 import com.example.junit5demo.domain.dtos.JokeDto;
-import com.github.javafaker.Faker;
 import lombok.experimental.UtilityClass;
+import net.datafaker.Faker;
 
 @UtilityClass
 public class JokeObjectMother {
